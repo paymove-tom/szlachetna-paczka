@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Świąteczna Paczka Czaru Bajek</title>
+  <meta name="description" content="Zapisy rodziców Klubu Dziecięcego Czar Bajek na dary do Szlachetnej Paczki.">
+  <meta name="theme-color" content="#9d1c32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="sky">
+      <div class="lights" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="snow" id="snow" aria-hidden="true"></div>
+      <div class="sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="hero-inner">
+        <div class="brand">
+          <a class="logo-tile" href="https://czar-bajek.pl/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/logos/czar-bajek-logo.png" alt="Czar Bajek" width="287" height="126">
+          </a>
+          <span class="times" aria-hidden="true">×</span>
+          <a class="logo-tile" href="https://www.szlachetnapaczka.pl/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/logos/logo-szlachetna-paczka.png" alt="Szlachetna Paczka" width="212" height="212">
+          </a>
+        </div>
+        <p class="eyebrow">Rodzice Klubu Dziecięcego Czar Bajek</p>
+        <h1>Świąteczna Paczka <em>Czaru Bajek</em></h1>
+        <p class="lede">Razem robimy najpiękniejsze Święta! Wybierz, co przyniesiesz, i dopisz się do listy 🎁</p>
+        <div class="santa-wrap">
+          <svg class="santa" viewBox="0 0 200 220" role="img" aria-label="Mikołaj macha rączką">
+            <ellipse cx="100" cy="208" rx="46" ry="8" fill="rgba(80,0,20,0.18)"/>
+            <path d="M76 134 C50 142 42 160 48 170" fill="none" stroke="#d4233a" stroke-width="14" stroke-linecap="round"/>
+            <circle cx="48" cy="174" r="8" fill="#f6c9ab"/>
+            <rect x="32" y="168" width="20" height="16" rx="3" fill="#1f7a46"/>
+            <path d="M32 175 h20 M42 168 v16" stroke="#f4d35e" stroke-width="2"/>
+            <ellipse cx="78" cy="198" rx="16" ry="9" fill="#2a211c"/>
+            <ellipse cx="122" cy="198" rx="16" ry="9" fill="#2a211c"/>
+            <path d="M64 122 c-6 38 8 70 22 74 h28 c16-4 28-36 22-74 -14 16-34 20-50 0z" fill="#e03145"/>
+            <path d="M70 168 c16 14 44 14 62 0" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+            <rect x="74" y="146" width="52" height="11" rx="4" fill="#2a211c"/>
+            <rect x="92" y="143" width="16" height="16" rx="3" fill="#f4d35e"/>
+            <circle cx="70" cy="96" r="6" fill="#f3bb9a"/>
+            <circle cx="130" cy="96" r="6" fill="#f3bb9a"/>
+            <circle cx="100" cy="90" r="30" fill="#f6c9ab"/>
+            <path d="M72 100 c-2 26 16 40 28 42 14-2 30-16 28-42 -12 12-24 16-40 0z" fill="#fff"/>
+            <path d="M82 106 c10 10 26 10 36 0 -8 5-28 5-36 0z" fill="#fff"/>
+            <circle cx="88" cy="86" r="3.1" fill="#2c2118"/>
+            <circle cx="112" cy="86" r="3.1" fill="#2c2118"/>
+            <ellipse cx="100" cy="96" rx="5" ry="3.4" fill="#ef846c"/>
+            <path d="M92 104 c5 6 12 6 16 0" fill="none" stroke="#c45b62" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="78" cy="98" r="5" fill="#f4a3a0" opacity="0.8"/>
+            <circle cx="122" cy="98" r="5" fill="#f4a3a0" opacity="0.8"/>
+            <path d="M68 78 c4-34 38-40 76-18 2 14-10 22-22 18" fill="#e03145"/>
+            <ellipse cx="102" cy="78" rx="36" ry="11" fill="#fff"/>
+            <circle cx="148" cy="56" r="9" fill="#fff"/>
+            <g class="santa-arm">
+              <path d="M126 120 c20-4 34-26 28-46" fill="none" stroke="#e03145" stroke-width="14" stroke-linecap="round"/>
+              <circle cx="150" cy="70" r="9" fill="#f6c9ab"/>
+              <ellipse cx="158" cy="66" rx="4" ry="3" fill="#f6c9ab"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="thanks" id="thanks">Przynosimy listę darów…</p>
+    <div class="meter" aria-hidden="true"><span id="meter"></span></div>
+    <div id="list"></div>
+  </main>
+
+  <footer class="footer">
+    <p>Akcja rodziców Klubu Dziecięcego Czar Bajek.</p>
+    <p>
+      <a href="https://czar-bajek.pl/">czar-bajek.pl</a>
+      ·
+      <a href="https://www.szlachetnapaczka.pl/">szlachetnapaczka.pl</a>
+    </p>
+  </footer>
+
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <form id="form">
+      <div class="dialog-band">
+        <h2 id="dialog-title">Dopisuję się</h2>
+        <p id="dialog-item"></p>
+      </div>
+      <div class="dialog-body">
+        <p class="hint">Imię i nazwisko będzie widoczne na liście dla innych rodziców. Jedna pozycja — jedna rodzina.</p>
+        <label>
+          Imię i nazwisko
+          <input id="field-name" name="imieNazwisko" type="text" required maxlength="80" autocomplete="name" placeholder="np. Anna Kowalska">
+        </label>
+        <label>
+          Imię dziecka lub grupa <span class="opt">(opcjonalnie)</span>
+          <input id="field-child" name="dziecko" type="text" maxlength="80" autocomplete="off" placeholder="np. Zosia, Biedronki">
+        </label>
+        <div class="hp" aria-hidden="true">
+          <label>Strona www
+            <input id="field-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </label>
+        </div>
+        <input id="field-id" type="hidden">
+        <p class="form-error" id="form-error" role="alert"></p>
+        <div class="form-actions">
+          <button class="btn-ghost" id="cancel" type="button">Wracam</button>
+          <button class="btn-join" id="submit-signup" type="submit">Zapisuję ten dar</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="noscript">Włącz JavaScript, żeby zobaczyć listę darów i się dopisać.</p></noscript>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>
