@@ -80,21 +80,27 @@ function celebrate() {
   setTimeout(() => layer.remove(), 2200);
 }
 
+function slotIds(item) {
+  const count = Number(item.slots) >= 2 ? Math.floor(Number(item.slots)) : 1;
+  return Array.from({ length: count }, (_, index) => (index ? `${item.id}-${index + 1}` : item.id));
+}
+
 function wolneLabel(count) {
   if (count === 0) return 'wszystko zajęte';
-  if (count === 1) return '1 wolna';
+  if (count === 1) return '1 wolne';
   return `${count} wolne`;
 }
 
 function render() {
   const rows = Array.isArray(items) ? items : [];
-  const taken = rows.filter((item) => signups[item.id]).length;
-  thanks.textContent = !rows.length
+  const places = rows.flatMap(slotIds);
+  const taken = places.filter((id) => signups[id]).length;
+  thanks.textContent = !places.length
     ? 'Lista darów jest jeszcze pusta.'
-    : taken === rows.length
+    : taken === places.length
       ? '🎉 Wszystkie dary mają już darczyńców, dziękujemy! 🎉'
-      : `🎄 Zebraliśmy już ${taken} z ${rows.length} ${darow(rows.length)}, dziękujemy! 🎄`;
-  meter.style.width = rows.length ? `${Math.round((taken / rows.length) * 100)}%` : '0%';
+      : `🎄 Zebraliśmy już ${taken} z ${places.length} ${darow(places.length)}, dziękujemy! 🎄`;
+  meter.style.width = places.length ? `${Math.round((taken / places.length) * 100)}%` : '0%';
 
   const groups = [];
   rows.forEach((item) => {
@@ -108,22 +114,31 @@ function render() {
   });
 
   list.replaceChildren(...groups.map((group) => {
-    const free = group.items.filter((item) => !signups[item.id]).length;
+    const free = group.items.flatMap(slotIds).filter((id) => !signups[id]).length;
     const cards = h('div', { class: 'cards' });
     group.items.forEach((item) => {
-      const signup = signups[item.id];
-      const who = signup
-        ? `${signup.name || 'Zapisane'}${signup.child ? ` (${signup.child})` : ''}`
-        : '';
-      const action = signup
-        ? h('div', { class: 'who' }, h('span', { class: 'who-name' }, h('span', { class: 'tick', 'aria-hidden': 'true', text: '✓' }), who))
-        : h('button', { class: 'btn-join', type: 'button', text: 'Dopisuję się', onclick: () => openDialog(item) });
-      cards.append(h('article', { class: signup ? 'card is-taken' : 'card' },
+      const ids = slotIds(item);
+      const freeHere = ids.filter((id) => !signups[id]).length;
+      const full = freeHere === 0;
+      const actions = ids.map((slotId, index) => {
+        const signup = signups[slotId];
+        const who = signup
+          ? `${signup.name || 'Zapisane'}${signup.child ? ` (${signup.child})` : ''}`
+          : '';
+        const control = signup
+          ? h('div', { class: 'who' }, h('span', { class: 'who-name' }, h('span', { class: 'tick', 'aria-hidden': 'true', text: '✓' }), who))
+          : h('button', { class: 'btn-join', type: 'button', text: 'Dopisuję się', onclick: () => openDialog(item, slotId) });
+        return ids.length > 1
+          ? h('div', { class: 'slot' }, h('span', { class: 'slot-label', text: `Miejsce ${index + 1}` }), control)
+          : control;
+      });
+      cards.append(h('article', { class: full ? 'card is-taken' : 'card' },
         h('div', { class: 'icon', 'aria-hidden': 'true', text: item.ico || '🎁' }),
         h('div', {},
           h('h3', { class: 'name', text: item.name || item.id }),
-          h('p', { class: 'status', text: signup ? 'Zajęte, dziękujemy!' : 'Wolne, czeka na Ciebie' })),
-        h('div', { class: 'action' }, action)));
+          item.note ? h('p', { class: 'desc', text: item.note }) : null,
+          h('p', { class: 'status', text: full ? 'Zajęte, dziękujemy!' : (ids.length > 1 ? `Wolne miejsca: ${freeHere} z ${ids.length}` : 'Wolne, czeka na Ciebie') })),
+        h('div', { class: 'action' }, ...actions)));
     });
     return h('section', { class: 'group' },
       h('div', { class: 'group-head' },
@@ -133,9 +148,18 @@ function render() {
   }));
 }
 
-function openDialog(item) {
+function openDialog(item, slotId) {
   document.querySelector('#dialog-item').textContent = `${item.ico || ''} ${item.name || ''}`.trim();
-  document.querySelector('#field-id').value = item.id;
+  const place = document.querySelector('#dialog-place');
+  const ids = slotIds(item);
+  if (ids.length > 1) {
+    place.hidden = false;
+    place.textContent = `Miejsce ${ids.indexOf(slotId) + 1} z ${ids.length}`;
+  } else {
+    place.hidden = true;
+    place.textContent = '';
+  }
+  document.querySelector('#field-id').value = slotId;
   document.querySelector('#field-name').value = localStorage.getItem('pn') || '';
   document.querySelector('#field-child').value = '';
   document.querySelector('#field-website').value = '';

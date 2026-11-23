@@ -361,6 +361,10 @@ h1 em { font-style: italic; color: #ffe29a; }
   font-size: 0.92rem;
 }
 
+.action { display: grid; gap: 8px; justify-items: stretch; min-width: 168px; }
+.slot { display: grid; gap: 4px; justify-items: stretch; }
+.slot-label { font-size: 0.78rem; font-weight: 800; color: #8a7060; text-align: right; }
+
 .cards { display: grid; gap: 10px; }
 
 .card {
@@ -560,7 +564,8 @@ input[type="text"] {
   .lights i { width: 8px; height: 13px; }
   .lights i:nth-child(n + 11) { display: none; }
   .card { grid-template-columns: auto 1fr; }
-  .action { grid-column: 1 / -1; }
+  .action { grid-column: 1 / -1; min-width: 0; }
+  .slot-label { text-align: left; }
   .btn-join { width: 100%; }
   .who { justify-items: start; max-width: none; }
   h1 { font-size: 2.15rem; }

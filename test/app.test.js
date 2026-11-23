@@ -11,13 +11,6 @@ import { validateSignup } from '../lib/validate.js';
 
 const exec = promisify(execFile);
 const root = fileURLToPath(new URL('..', import.meta.url));
-const IDS = [
-  'odkurzacz', 'kurtka', 'buty', 'czapka-rekawiczki', 'spodnie-swetry', 'cukier', 'herbata', 'kawa', 'konserwy-rybne', 'maka', 'olej',
-  'platki', 'dzem', 'kasza', 'konserwy-miesne', 'makaron', 'mleko', 'owoce-warzywa', 'ryz',
-  'gabki', 'mydlo', 'papier', 'plyn-naczynia', 'proszek', 'szczoteczka', 'pasta',
-  'plyn-plukanie', 'podpaski', 'szampon', 'plyny-czyszczace',
-];
-
 async function fixture() {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'paczka-'));
   await fs.copyFile(path.join(root, 'data', 'pozycje.json'), path.join(dir, 'pozycje.json'));
@@ -110,20 +103,36 @@ test('konflikt sha na GitHubie oddaje pozycję pierwszemu', async () => {
   }
 });
 
-test('pozycje.json ma prawdziwą listę rodziny z kategoriami', async () => {
+test('pozycje.json jest listą z produkcji, z miejscami i opisem', async () => {
   const data = JSON.parse(await fs.readFile(path.join(root, 'data', 'pozycje.json'), 'utf8'));
-  assert.deepEqual(data.map((item) => item.id), IDS);
-  assert.deepEqual([...new Set(data.map((item) => item.cat))], [
-    '⭐ Najważniejsze potrzeby Rodziny',
-    '🥫 Żywność trwała',
-    '🧼 Środki czystości',
-  ]);
+  assert.equal(data.length, 67);
+  assert.equal(new Set(data.map((item) => item.cat)).size, 10);
+  assert.equal(data.filter((item) => item.slots === 2).length, 25);
+  assert.equal(data[0].id, 'odkurzacz');
+  assert.equal(data[0].slots, undefined);
+  const makaron = data.find((item) => item.id === 'makaron');
+  assert.equal(makaron.slots, 2);
   for (const item of data) {
+    assert.match(item.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
     assert.equal(typeof item.ico, 'string');
     assert.equal(typeof item.name, 'string');
     assert.equal(typeof item.cat, 'string');
-    assert.deepEqual(Object.keys(item).sort(), ['cat', 'ico', 'id', 'name']);
+    if (item.note != null) assert.equal(typeof item.note, 'string');
+    if (item.slots != null) assert.equal(item.slots, 2);
   }
+});
+
+test('dwa miejsca są osobnymi kluczami, a produkt bez slots ma tylko jedno', async () => {
+  const dir = await fixture();
+  const first = await zapisz({ id: 'makaron', name: 'Anna Kowalska', child: '' });
+  const second = await zapisz({ id: 'makaron-2', name: 'Piotr Wiśniewski', child: 'Hania' });
+  assert.equal(first.body.ok, true);
+  assert.equal(second.body.ok, true);
+  const saved = JSON.parse(await fs.readFile(path.join(dir, 'zapisy.json'), 'utf8'));
+  assert.equal(saved.makaron.name, 'Anna Kowalska');
+  assert.equal(saved['makaron-2'].name, 'Piotr Wiśniewski');
+  const extra = await zapisz({ id: 'odkurzacz-2', name: 'Ewa Nowak' });
+  assert.equal(extra.status, 404);
 });
 
 test('ignoreCommand pomija sam plik zapisów', async () => {

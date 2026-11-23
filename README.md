@@ -2,7 +2,7 @@
 
 Strona, na której rodzice Klubu Dziecięcego [Czar Bajek](https://czar-bajek.pl/) zapisują się na dary do [Szlachetnej Paczki](https://www.szlachetnapaczka.pl/). Wolna pozycja ma przycisk „Dopisuję się”. Zajęta pokazuje, kto się wpisał, i nie przyjmuje kolejnego zapisu.
 
-Lista darów jest w [`data/pozycje.json`](data/pozycje.json) (tablica pól `id`, `ico`, `name`, `cat`). Strona grupuje pozycje po `cat`. Zapisy rodziców są w `data/zapisy.json` na gałęzi `main`. Ten plik **nie jest zmieniany w tym PR** — na Vercelu endpoint czyta i dopisuje go przez GitHub Contents API, więc prawdziwe zapisy zostają.
+Lista darów jest w [`data/pozycje.json`](data/pozycje.json) (tablica pól `id`, `ico`, `name`, `note`, `cat`, `slots`). `note` to opis albo rozmiar pod nazwą, `cat` grupuje sekcje. `slots: 2` daje dwa miejsca: klucz `<id>` i `<id>-2` w zapisach, każde z własnym przyciskiem. Licznik na górze liczy miejsca, nie produkty. Zapisy rodziców są w `data/zapisy.json` na gałęzi `main`. Ten plik **nie jest zmieniany w tym PR** — na Vercelu endpoint czyta i dopisuje go przez GitHub Contents API, więc prawdziwe zapisy zostają.
 
 ## Format zapisów
 
@@ -41,7 +41,7 @@ npm start
 
 ## Edycja darów
 
-Zmieniaj nazwy i emoji w `data/pozycje.json`. Pole `cat` jest nagłówkiem sekcji — pozycje z tym samym `cat` stoją razem, w kolejności z pliku. `id` zostaw, jeśli ktoś już się na nie zapisał. Lista jest z formularza rodziny: najważniejsze potrzeby (odkurzacz i ciepłe ubrania), żywność trwała i środki czystości.
+Lista jest skopiowana z formularza rodziny (produkty, bez adresu magazynu i godzin). `id` zostaw, jeśli ktoś już się zapisał — drugie miejsce tej samej pozycji ma klucz z końcówką `-2`.
 
 Commit listy darów (albo czegokolwiek poza samym `data/zapisy.json`) przebudowuje Vercela. Sam zapis rodzica commituje wyłącznie `data/zapisy.json` i **nie** przebudowuje strony.
 
