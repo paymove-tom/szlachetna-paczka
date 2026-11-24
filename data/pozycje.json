@@ -1,0 +1,471 @@
+[
+ {
+  "id": "odkurzacz",
+  "ico": "🧹",
+  "name": "Odkurzacz",
+  "note": "Obecny odkurzacz rodziny się psuje",
+  "cat": "⭐ Najważniejsze potrzeby Rodziny"
+ },
+ {
+  "id": "marta-kurtka",
+  "ico": "🧥",
+  "name": "Kurtka zimowa",
+  "note": "Rozmiar M, czarna, średniej długości (do bioder)",
+  "cat": "👧 Ubrania i buty dla Marty"
+ },
+ {
+  "id": "marta-sweter",
+  "ico": "🧶",
+  "name": "Sweter zimowy",
+  "note": "Rozmiar M, kolor butelkowa zieleń",
+  "cat": "👧 Ubrania i buty dla Marty"
+ },
+ {
+  "id": "marta-tshirt",
+  "ico": "👚",
+  "name": "Koszulka / t-shirt",
+  "note": "Rozmiar M, czarna lub różowa, z jakimś nadrukiem",
+  "cat": "👧 Ubrania i buty dla Marty"
+ },
+ {
+  "id": "marta-skarpetki",
+  "ico": "🧦",
+  "name": "Skarpetki",
+  "note": "Bawełniane, rozmiar stopy 38, kolory dowolne",
+  "cat": "👧 Ubrania i buty dla Marty"
+ },
+ {
+  "id": "marta-bielizna",
+  "ico": "🩱",
+  "name": "Bielizna",
+  "note": "Komplet klasycznej bielizny damskiej, 85D / M, kolor dowolny",
+  "cat": "👧 Ubrania i buty dla Marty"
+ },
+ {
+  "id": "marta-pizama",
+  "ico": "😴",
+  "name": "Piżama",
+  "note": "Rozmiar M, wzór ze Stichem",
+  "cat": "👧 Ubrania i buty dla Marty"
+ },
+ {
+  "id": "marta-buty",
+  "ico": "👢",
+  "name": "Kozaki / buty zimowe",
+  "note": "Rozmiar 38, czarne botki za kostkę, ocieplane, mogą być wiązane, wąska stopa",
+  "cat": "👧 Ubrania i buty dla Marty"
+ },
+ {
+  "id": "michal-kurtka",
+  "ico": "🧥",
+  "name": "Kurtka zimowa",
+  "note": "Rozmiar 164 cm, czarna z kapturem",
+  "cat": "👦 Ubrania i buty dla Michała"
+ },
+ {
+  "id": "michal-dres",
+  "ico": "🏃",
+  "name": "Dres",
+  "note": "Rozmiar 164 cm, luźne spodnie dresowe i rozpinana bluza z kapturem, czarny",
+  "cat": "👦 Ubrania i buty dla Michała"
+ },
+ {
+  "id": "michal-bluzka",
+  "ico": "👕",
+  "name": "Bluzki z długim rękawem",
+  "note": "Rozmiar 164 cm, najlepiej czarne",
+  "cat": "👦 Ubrania i buty dla Michała"
+ },
+ {
+  "id": "michal-skarpetki",
+  "ico": "🧦",
+  "name": "Skarpetki",
+  "note": "Długie, typu getry, rozmiar stopy 39/40, białe",
+  "cat": "👦 Ubrania i buty dla Michała"
+ },
+ {
+  "id": "michal-buty",
+  "ico": "👟",
+  "name": "Kozaki / buty zimowe",
+  "note": "Rozmiar 40, model sportowy w ciemnym kolorze, wysokie podbicie, szeroka stopa",
+  "cat": "👦 Ubrania i buty dla Michała"
+ },
+ {
+  "id": "upominek-marta",
+  "ico": "💙",
+  "name": "Bluza rozpinana dla Marty",
+  "note": "Bluza Pogoni Szczecin albo bluza w kolorze chabrowym, rozmiar M. Jeśli się nie uda: zestaw kosmetyków (żel, balsam)",
+  "cat": "🎁 Szczególne upominki"
+ },
+ {
+  "id": "upominek-michal",
+  "ico": "⚽",
+  "name": "Buty piłkarskie turfy dla Michała",
+  "note": "Rozmiar 40, albo pompka do piłki nożnej. Jeśli się nie uda: zestaw kosmetyków (żel, dezodorant)",
+  "cat": "🎁 Szczególne upominki"
+ },
+ {
+  "id": "cukier",
+  "ico": "🍬",
+  "name": "Cukier",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "herbata",
+  "ico": "🍵",
+  "name": "Herbata",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "kawa",
+  "ico": "☕",
+  "name": "Kawa",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "konserwy-rybne",
+  "ico": "🐟",
+  "name": "Konserwy rybne",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "maka",
+  "ico": "🌾",
+  "name": "Mąka",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "olej",
+  "ico": "🫒",
+  "name": "Olej",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "platki",
+  "ico": "🥣",
+  "name": "Płatki śniadaniowe",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "dzem",
+  "ico": "🍓",
+  "name": "Dżem",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "kasza",
+  "ico": "🌾",
+  "name": "Kasza",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "konserwy-miesne",
+  "ico": "🥫",
+  "name": "Konserwy mięsne",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "makaron",
+  "ico": "🍝",
+  "name": "Makaron",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "mleko",
+  "ico": "🥛",
+  "name": "Mleko",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "owoce-warzywa",
+  "ico": "🥕",
+  "name": "Owoce i warzywa w puszkach",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "ryz",
+  "ico": "🍚",
+  "name": "Ryż",
+  "cat": "🥫 Żywność trwała",
+  "slots": 2
+ },
+ {
+  "id": "gabki",
+  "ico": "🧽",
+  "name": "Gąbki / ściereczki",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "mydlo",
+  "ico": "🧼",
+  "name": "Mydło / żel myjący",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "papier",
+  "ico": "🧻",
+  "name": "Papier toaletowy",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "plyn-naczynia",
+  "ico": "🍽️",
+  "name": "Płyn do mycia naczyń",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "proszek",
+  "ico": "👕",
+  "name": "Proszek do prania",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "szczoteczka",
+  "ico": "🪥",
+  "name": "Szczoteczka do zębów",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "pasta",
+  "ico": "🦷",
+  "name": "Pasta do zębów",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "plyn-plukanie",
+  "ico": "🫧",
+  "name": "Płyn do płukania tkanin",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "podpaski",
+  "ico": "🌸",
+  "name": "Podpaski / tampony",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "szampon",
+  "ico": "🧴",
+  "name": "Szampon",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "plyny-czyszczace",
+  "ico": "🧪",
+  "name": "Płyny czyszczące (do WC, do podłóg)",
+  "cat": "🧼 Środki czystości",
+  "slots": 2
+ },
+ {
+  "id": "zeszyty",
+  "ico": "📓",
+  "name": "Zeszyty",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "plecak",
+  "ico": "🎒",
+  "name": "Plecak",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "piornik",
+  "ico": "✏️",
+  "name": "Piórnik",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "nozyczki",
+  "ico": "✂️",
+  "name": "Nożyczki",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "klej",
+  "ico": "🧴",
+  "name": "Klej",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "bloki",
+  "ico": "📒",
+  "name": "Bloki",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "przybory",
+  "ico": "🖊️",
+  "name": "Przybory do pisania",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "plastelina",
+  "ico": "🟣",
+  "name": "Plastelina",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "papier-kolorowy",
+  "ico": "🌈",
+  "name": "Papier kolorowy",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "kredki",
+  "ico": "🖍️",
+  "name": "Kredki",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "farbki",
+  "ico": "🎨",
+  "name": "Farbki",
+  "note": "",
+  "cat": "📚 Materiały szkolne"
+ },
+ {
+  "id": "koldra-140",
+  "ico": "🛏️",
+  "name": "Kołdra 140×200 cm",
+  "note": "Koniecznie antyalergiczna",
+  "cat": "🛏️ Wyposażenie mieszkania"
+ },
+ {
+  "id": "koldra-200",
+  "ico": "🛏️",
+  "name": "Kołdra 200×220 cm",
+  "note": "",
+  "cat": "🛏️ Wyposażenie mieszkania"
+ },
+ {
+  "id": "poduszka",
+  "ico": "☁️",
+  "name": "Poduszka 60×70 cm",
+  "note": "Antyalergiczna",
+  "cat": "🛏️ Wyposażenie mieszkania"
+ },
+ {
+  "id": "jasiek",
+  "ico": "☁️",
+  "name": "Poduszka typu jasiek",
+  "note": "Antyalergiczna",
+  "cat": "🛏️ Wyposażenie mieszkania"
+ },
+ {
+  "id": "koc-szary",
+  "ico": "🧣",
+  "name": "Koc szary",
+  "note": "",
+  "cat": "🛏️ Wyposażenie mieszkania"
+ },
+ {
+  "id": "koc-pilkarski",
+  "ico": "⚽",
+  "name": "Koc ze wzorem piłkarskim",
+  "note": "",
+  "cat": "🛏️ Wyposażenie mieszkania"
+ },
+ {
+  "id": "posciel",
+  "ico": "🛌",
+  "name": "Pościel, 2 komplety",
+  "note": "Rozmiary jak kołdry (140×200 i 200×220)",
+  "cat": "🛏️ Wyposażenie mieszkania"
+ },
+ {
+  "id": "przescieradla",
+  "ico": "🛌",
+  "name": "Prześcieradła, 2 sztuki",
+  "note": "160×200 cm",
+  "cat": "🛏️ Wyposażenie mieszkania"
+ },
+ {
+  "id": "reczniki",
+  "ico": "🛁",
+  "name": "Ręczniki, 2 komplety",
+  "note": "Jeden czarny i jeden różowy",
+  "cat": "🛏️ Wyposażenie mieszkania"
+ },
+ {
+  "id": "czajnik",
+  "ico": "🫖",
+  "name": "Czajnik",
+  "note": "",
+  "cat": "🔌 Sprzęty domowe"
+ },
+ {
+  "id": "mikser",
+  "ico": "🥣",
+  "name": "Mikser ręczny",
+  "note": "Przyda się przy przygotowywaniu posiłków",
+  "cat": "🔌 Sprzęty domowe"
+ },
+ {
+  "id": "airfryer",
+  "ico": "🍟",
+  "name": "Air fryer",
+  "note": "Do zdrowszych posiłków i szybkiego podgrzewania w dni szkolne",
+  "cat": "🔌 Sprzęty domowe"
+ },
+ {
+  "id": "garnki",
+  "ico": "🍲",
+  "name": "Komplet garnków",
+  "note": "Nowe, standardowy rozmiar",
+  "cat": "🍳 Kuchnia i stół"
+ },
+ {
+  "id": "patelnie",
+  "ico": "🍳",
+  "name": "Patelnie, mała i duża",
+  "note": "",
+  "cat": "🍳 Kuchnia i stół"
+ },
+ {
+  "id": "kubki",
+  "ico": "☕",
+  "name": "Komplet kubków",
+  "note": "Rodzinie brakuje kubeczków do picia",
+  "cat": "🍳 Kuchnia i stół"
+ },
+ {
+  "id": "obrus",
+  "ico": "🧺",
+  "name": "Obrus 110×60 cm",
+  "note": "",
+  "cat": "🍳 Kuchnia i stół"
+ }
+]
